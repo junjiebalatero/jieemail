@@ -61,8 +61,14 @@ app.get('/', async (req, res) => {
         res.status(500).send(error)
       }
     });
-  
+ 
+    const PORT = process.env.PORT || 5000;
 
-app.listen(3001, () => {
-    console.log(`app is listening at port:3001`)
-  })
+    app.listen(PORT, () => console.log('Server run at port ${PORT}'));
+
+
+
+ // app.listen(3001, () => {
+ //   console.log(`app is listening at port:3001`)
+
+//  })
