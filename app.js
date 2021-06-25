@@ -19,6 +19,7 @@ app.post('/', async(req, res) => {
   }
 });
 
+// get all records
 app.get('/', async (req, res) => {
   try {
     const posts = await postModel.find();
@@ -28,6 +29,7 @@ app.get('/', async (req, res) => {
   }
 });
 
+  // get individual record
   app.get('/:id', async (req, res) => {
     const {id} = req.params;
     try {
@@ -65,10 +67,3 @@ app.get('/', async (req, res) => {
     const PORT = process.env.PORT || 5000;
 
     app.listen(PORT, () => console.log('Server run at port ${PORT}'));
-
-
-
- // app.listen(3001, () => {
- //   console.log(`app is listening at port:3001`)
-
-//  })
